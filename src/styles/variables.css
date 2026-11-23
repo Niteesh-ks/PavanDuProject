@@ -1,0 +1,143 @@
+:root {
+  /* ========================================================================
+     UNFOLD EXACT COLOUR TOKENS
+     ======================================================================== */
+  --color-forest-green: #294C38;
+  --color-forest-dark: #1E3829;
+  --color-forest-deep: #16291E;
+  --color-warm-ivory: #F4F0E6;
+  --color-ivory-soft: #FAF7F0;
+  --color-ivory-muted: #E8E2D4;
+  --color-acid-yellow: #E2FF54;
+  --color-acid-hover: #D4F442;
+  --color-ink-black: #151B17;
+  --color-sage: #B8D8A5;
+  --color-sage-soft: #D5E7CA;
+  --color-amber: #E6A94A;
+
+  /* Typography */
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --max-width: 1320px;
+
+  /* Border Radius Tokens */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   LIGHT THEME (Warm Ivory + Forest Green + Acid Yellow)
+   ========================================================================== */
+[data-theme="light"] {
+  --bg-app: var(--color-warm-ivory);
+  --bg-surface: #FAF7F0;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8F5EC;
+  --bg-subtle: #ECE5D6;
+  --bg-overlay: rgba(244, 240, 230, 0.94);
+
+  --text-primary: var(--color-ink-black);
+  --text-secondary: var(--color-forest-green);
+  --text-muted: #56675B;
+  --text-faint: #8E9C91;
+
+  --border-subtle: #DFD7C4;
+  --border-strong: #C8BEA7;
+  --border-focus: var(--color-forest-green);
+
+  --brand-nav: var(--color-forest-green);
+  --brand-nav-text: var(--color-warm-ivory);
+
+  --btn-primary-bg: var(--color-acid-yellow);
+  --btn-primary-text: var(--color-ink-black);
+  --btn-primary-border: var(--color-ink-black);
+
+  --btn-secondary-bg: #FAF7F0;
+  --btn-secondary-text: var(--color-forest-green);
+  --btn-secondary-border: var(--color-forest-green);
+
+  --badge-bg: var(--color-sage-soft);
+  --badge-text: var(--color-forest-green);
+
+  --shadow-sm: 0 1px 3px rgba(21, 27, 23, 0.05);
+  --shadow-md: 0 6px 18px rgba(21, 27, 23, 0.08);
+  --shadow-lg: 0 16px 36px rgba(21, 27, 23, 0.12);
+
+  --accent-action: var(--color-acid-yellow);
+  --accent-brand: var(--color-forest-green);
+  --accent-support: var(--color-sage);
+}
+
+/* ==========================================================================
+   DARK THEME (Ink Black + Deep Forest Green + Acid Yellow Highlights)
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-app: var(--color-ink-black);
+  --bg-surface: #1B2821;
+  --bg-card: #1E2E25;
+  --bg-card-hover: #263C30;
+  --bg-subtle: #273D31;
+  --bg-overlay: rgba(21, 27, 23, 0.94);
+
+  --text-primary: var(--color-warm-ivory);
+  --text-secondary: var(--color-sage);
+  --text-muted: #8F9E94;
+  --text-faint: #596A60;
+
+  --border-subtle: #294234;
+  --border-strong: #385945;
+  --border-focus: var(--color-acid-yellow);
+
+  --brand-nav: #16241D;
+  --brand-nav-text: var(--color-warm-ivory);
+
+  --btn-primary-bg: var(--color-acid-yellow);
+  --btn-primary-text: var(--color-ink-black);
+  --btn-primary-border: var(--color-acid-yellow);
+
+  --btn-secondary-bg: #1E2E25;
+  --btn-secondary-text: var(--color-warm-ivory);
+  --btn-secondary-border: #385945;
+
+  --badge-bg: rgba(41, 76, 56, 0.7);
+  --badge-text: var(--color-acid-yellow);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.75);
+
+  --accent-action: var(--color-acid-yellow);
+  --accent-brand: var(--color-forest-green);
+  --accent-support: var(--color-sage);
+}
