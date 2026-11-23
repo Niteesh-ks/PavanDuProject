@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Eye, EyeOff, Lock, Mail, User, School, Sparkles, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
+import { Eye, EyeOff, Lock, Mail, User, School, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { useAuth } from '../contexts/AuthContext';
 import { SEED_CATEGORIES, isSupabaseConfigured, supabase } from '../lib/supabase';
@@ -63,12 +63,17 @@ export function AuthPage() {
     try {
       if (mode === 'signin') {
         if (!email || !password) throw new Error('Please fill in both email and password.');
-        const { profile } = await signIn({ email, password, expectedRole: selectedPortal });
+        const result = await signIn({ email, password, expectedRole: selectedPortal });
+        const resolvedRole =
+          result?.profile?.role ||
+          result?.user?.user_metadata?.role ||
+          selectedPortal ||
+          'STUDENT';
         const portalDestination = {
           STUDENT: '/dashboard',
           ORGANIZER: '/organizer',
           ADMIN: '/admin',
-        }[profile.role];
+        }[resolvedRole] || '/dashboard';
         const matchingRequestedRoute = from === portalDestination || from.startsWith(`${portalDestination}/`);
         navigate(matchingRequestedRoute ? from : portalDestination, { replace: true });
       } else if (mode === 'signup') {
